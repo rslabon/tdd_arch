@@ -4,12 +4,12 @@ import io.restassured.RestAssured;
 import org.chat.main.infrastructure.App;
 import org.junit.rules.ExternalResource;
 
-public class AppITRule extends ExternalResource {
+public class AppTestServer extends ExternalResource {
 
     private final int port;
     private App app;
 
-    public AppITRule(int port) {
+    public AppTestServer(int port) {
         this.port = port;
     }
 
