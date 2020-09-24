@@ -16,7 +16,6 @@ public class StepDefinition {
 
     public AppTestServer appTestServer = new AppTestServer(7634);
 
-    private ObjectMapper objectMapper = new ObjectMapper();
     private ValidatableResponse validatableResponse;
 
     @When("^call GET \"([^\"]*)\"$")
@@ -56,6 +55,6 @@ public class StepDefinition {
     }
 
     private JsonNode asJsonNode(String json) throws IOException {
-        return objectMapper.readTree(json);
+        return new ObjectMapper().readTree(json);
     }
 }
